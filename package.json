@@ -1,0 +1,70 @@
+{
+  "name": "jsontots",
+  "displayName": "JsonToTs",
+  "description": "将json数据转为TS类型",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.JsonToTs",
+        "title": "JsonToTs"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "jsontots",
+          "title": "JsonToTs",
+          "icon": "resources/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "jsontots": [
+        {
+          "type": "webview",
+          "id": "package-dependencies",
+          "name": "Dependencies"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "rollup -c",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "build": "npm run compile && vsce package"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.90.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "json5": "^2.2.3",
+    "prettier": "^3.3.3",
+    "rollup": "^4.24.0",
+    "tslib": "^2.7.0"
+  }
+}
