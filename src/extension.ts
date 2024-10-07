@@ -45,3 +45,4 @@ function insertText(text: string):void {
 }
 
 export function deactivate() { }
+

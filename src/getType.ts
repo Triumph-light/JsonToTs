@@ -1,5 +1,5 @@
 import JSON5 from 'json5';
-import prettier from 'prettier';
+import {format} from 'prettier';
 import { getBigCamelName, getType, isArray, isObject } from './utils';
 import { window } from 'vscode';
 
@@ -109,7 +109,7 @@ export default async function (jsonString: string, space = '    ') {
 
     const typeString = [...topTypeScope,...typeArray].join('');
     
-    return prettier.format(typeString, { parser: 'typescript'});
+    return format(typeString, { parser: 'typescript'});
 }
 
 export function isSameScheme(input1: unknown, input2: unknown) {

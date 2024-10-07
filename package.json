@@ -2,6 +2,13 @@
   "name": "jsontots",
   "displayName": "JsonToTs",
   "description": "将json数据转为TS类型",
+  "repository": {
+    "url": "https://github.com/Triumph-light/JsonToTs"
+  },
+  "author": {
+    "name": "Triumph-light"
+  },
+  "publisher": "Triumph-light",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.90.0"
