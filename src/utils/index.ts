@@ -8,6 +8,11 @@ export function isArray(node: unknown): node is unknown[] {
     return '[object Array]' === Object.prototype.toString.call(node);
 }
 
+/**
+ * 获取当前类型
+ * @param node 
+ * @returns 
+ */
 export function getType(node: unknown): string {
     const type = typeof node;
 
@@ -20,12 +25,21 @@ export function getType(node: unknown): string {
     }
 }
 
+/**
+ * 是否为蛇形命名
+ * @param propsName 
+ * @returns 
+ */
 export function isSnakeCase(propsName: string): boolean {
     const snakeCaseRegex = /^[a-z]+(_[a-z]+)*$/;
     return snakeCaseRegex.test(propsName);
 }
 
-
+/**
+ * 转为大驼峰命名法
+ * @param propsName 
+ * @returns 
+ */
 export function getBigCamelName(propsName: string | undefined): string{
     if(!propsName) {return '';}
     if(isSnakeCase(propsName)) {

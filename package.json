@@ -21,10 +21,37 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.JsonToTs",
+        "command": "JsonToTs",
         "title": "JsonToTs"
+      },
+      {
+        "command": "cssToCssObj",
+        "title": "css to css-obj"
+      },
+      {
+        "command": "cssObjToCss",
+        "title": "css-obj to css"
       }
     ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "JsonToTs",
+          "group": "navigation",
+          "when": "resourceLangId == typescript"
+        },
+        {
+          "command": "cssObjToCss",
+          "group": "navigation",
+          "when": "resourceLangId == css || resourceLangId == less || resourceLangId == scss"
+        },
+        {
+          "command": "cssToCssObj",
+          "group": "navigation",
+          "when": "resourceLangId == typescriptreact || resourceLangId == javascriptreact"
+        }
+      ]
+    },
     "viewsContainers": {
       "activitybar": [
         {
